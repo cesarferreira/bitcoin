@@ -1,14 +1,14 @@
 [Desktop Entry]
 Version=1.0
-Name=Bitcoin Core
-Comment=Connect to the Bitcoin P2P Network
-Comment[de]=Verbinde mit dem Bitcoin peer-to-peer Netzwerk
-Comment[fr]=Bitcoin, monnaie virtuelle cryptographique pair à pair
-Comment[tr]=Bitcoin, eşten eşe kriptografik sanal para birimi
-Exec=bitcoin-qt %u
+Name=Cesarcoin Core
+Comment=Connect to the Cesarcoin P2P Network
+Comment[de]=Verbinde mit dem Cesarcoin peer-to-peer Netzwerk
+Comment[fr]=Cesarcoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Cesarcoin, eşten eşe kriptografik sanal para birimi
+Exec=cesarcoin-qt %u
 Terminal=false
 Type=Application
-Icon=bitcoin128
-MimeType=x-scheme-handler/bitcoin;
+Icon=cesarcoin128
+MimeType=x-scheme-handler/cesarcoin;
 Categories=Office;Finance;
-StartupWMClass=Bitcoin-qt
+StartupWMClass=Cesarcoin-qt

@@ -1,6 +1,6 @@
 [Protocol]
-exec=bitcoin-qt '%u'
-protocol=bitcoin
+exec=cesarcoin-qt '%u'
+protocol=cesarcoin
 input=none
 output=none
 helper=true

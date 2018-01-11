@@ -1,8 +1,8 @@
-/usr/bin/bitcoin-cli		--	gen_context(system_u:object_r:bitcoin_exec_t,s0)
-/usr/sbin/bitcoind		--	gen_context(system_u:object_r:bitcoin_exec_t,s0)
-/usr/lib(64)?/bitcoin/bitcoind		--	gen_context(system_u:object_r:bitcoin_exec_t,s0)
+/usr/bin/cesarcoin-cli		--	gen_context(system_u:object_r:cesarcoin_exec_t,s0)
+/usr/sbin/cesarcoind		--	gen_context(system_u:object_r:cesarcoin_exec_t,s0)
+/usr/lib(64)?/cesarcoin/cesarcoind		--	gen_context(system_u:object_r:cesarcoin_exec_t,s0)
 
-/etc/bitcoin(/.*)?		gen_context(system_u:object_r:bitcoin_conf_t,s0)
-/var/lib/bitcoin(/.*)?		gen_context(system_u:object_r:bitcoin_var_lib_t,s0)
+/etc/cesarcoin(/.*)?		gen_context(system_u:object_r:cesarcoin_conf_t,s0)
+/var/lib/cesarcoin(/.*)?		gen_context(system_u:object_r:cesarcoin_var_lib_t,s0)
 
-(/var)?/run/bitcoind(/.*)?   gen_context(system_u:object_r:bitcoin_var_run_t,s0)
+(/var)?/run/cesarcoind(/.*)?   gen_context(system_u:object_r:cesarcoin_var_run_t,s0)

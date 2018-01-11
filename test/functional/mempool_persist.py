@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-# Copyright (c) 2014-2017 The Bitcoin Core developers
+# Copyright (c) 2014-2017 The Cesarcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test mempool persistence.
 
-By default, bitcoind will dump mempool on shutdown and
+By default, cesarcoind will dump mempool on shutdown and
 then reload it on startup. This can be overridden with
 the -persistmempool=0 command line option.
 
@@ -38,10 +38,10 @@ Test is as follows:
 import os
 import time
 
-from test_framework.test_framework import BitcoinTestFramework
+from test_framework.test_framework import CesarcoinTestFramework
 from test_framework.util import *
 
-class MempoolPersistTest(BitcoinTestFramework):
+class MempoolPersistTest(CesarcoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 3
         self.extra_args = [[], ["-persistmempool=0"], []]
@@ -69,7 +69,7 @@ class MempoolPersistTest(BitcoinTestFramework):
         self.start_node(0)
         self.start_node(1)
         self.start_node(2)
-        # Give bitcoind a second to reload the mempool
+        # Give cesarcoind a second to reload the mempool
         time.sleep(1)
         wait_until(lambda: len(self.nodes[0].getrawmempool()) == 5)
         wait_until(lambda: len(self.nodes[2].getrawmempool()) == 5)
@@ -81,7 +81,7 @@ class MempoolPersistTest(BitcoinTestFramework):
         self.log.debug("Stop-start node0 with -persistmempool=0. Verify that it doesn't load its mempool.dat file.")
         self.stop_nodes()
         self.start_node(0, extra_args=["-persistmempool=0"])
-        # Give bitcoind a second to reload the mempool
+        # Give cesarcoind a second to reload the mempool
         time.sleep(1)
         assert_equal(len(self.nodes[0].getrawmempool()), 0)
 
@@ -103,7 +103,7 @@ class MempoolPersistTest(BitcoinTestFramework):
         self.start_node(1, extra_args=[])
         wait_until(lambda: len(self.nodes[1].getrawmempool()) == 5)
 
-        self.log.debug("Prevent bitcoind from writing mempool.dat to disk. Verify that `savemempool` fails")
+        self.log.debug("Prevent cesarcoind from writing mempool.dat to disk. Verify that `savemempool` fails")
         # to test the exception we are setting bad permissions on a tmp file called mempool.dat.new
         # which is an implementation detail that could change and break this test
         mempooldotnew1 = mempooldat1 + '.new'
